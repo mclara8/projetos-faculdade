@@ -1,0 +1,36 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>XMLHttpRequest</title>
+</head>
+<body>
+    <h1>Utilizando XMLHttpRequest</h1>
+    <!-- Botão criado para após o clique executará a função Conexao -->
+    <button type="button" onclick="Conexao()">Teste</button>
+    <script>
+        function Conexao(){
+            // Criando um novo objeto XMLHttpRequest
+            const xhr = new XMLHttpRequest();
+
+            // Configuração da solicitação, especificando o método GET e a URL 
+            xhr.open("GET", "https://jsonplaceholder.typicode.com/posts/1", true);
+
+            // Definindo uma função de callback para lidar com a resposta
+            xhr.onload = function() {
+                if (xhr.status === 200){
+                    // A solicitação foi bem sucedida, e o status da resposta é 200
+                    const response = JSON.parse(xhr.responseText);
+                    console.log("Título do post: ", respoonse.title);
+                } else {
+                    // A solicitação falhou
+                    console.log("Ocorreu um erro durante a solicitação.");
+                }
+            }
+
+            // Envia a solicitação 
+            xhr.send();
+        }
+    </script>
+</body>
+</html>
