@@ -1,32 +1,29 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
+  <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="css/style.css">
-    <title>Validação de Email</title>
-</head>
-<body>
-    <h1 id="header">Email</h1>
+    <link rel="stylesheet" href="src/style.css">
+  </head>
+  <body>
+    <h1 id="header">Validação de Email</h1>
 
-    <form class="form">
-
-        <fieldset>
-            <legend>Preencha com o seu Email</legend>
-            <div>
-                <label for="email">EMAIL</label>
+    <form>
+        <fieldset class="grupo">
+            <div class="campo">
+                <label for="email">Digite o seu email:</label>
                 <input
                     type="email"
-                    name="email"
-                    placeholder="Digite o seu email..."
+                    placeholder="exemplo@dominio.com"
                     id="email"
                     required
                 />
             </div>
+            <button class="botao" type="submit" onClick="validarEmail()">Verificar</button>
         </fieldset>
-        <span id="mensagem-erro" aria-live="polite" hidden>
-            Mensagem de Erro
-        </span>
+      
+        <span id="mensagem-erro" style="color: red";></span>
+      <span id="mensagem-orientacao" style="color: green;"></span>
     </form>
 </body>
 </html>
